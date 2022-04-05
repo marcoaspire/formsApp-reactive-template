@@ -1,0 +1,74 @@
+<h3>Reactive: Basics</h3>
+
+<hr>
+<div class="row">
+    <div class="col">
+        <!-- reactive -->
+            <form [formGroup]='myForm' (ngSubmit) = 'save()'> 
+                <div class="mb-3">
+
+
+                    <label class="form-label col-3">Product</label>
+                    <div class="col-9">
+                        <!-- formControlName link to property-->
+                        <input type="text" class="form-control" name="product" 
+                            placeholder="Product's name"
+                            formControlName="name" 
+                        >
+                        <span class="form-text text-danger" 
+                            *ngIf="isValid('name')" 
+                        >
+                            *Type at least 3 characters
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label col-3">Price</label>
+                    <div class="col-9">
+                             
+                            <input type="number" class="form-control" id="price" placeholder="Price" name="price"
+                                formControlName="price"
+                                
+                            >
+                        <span class="form-text text-danger" *ngIf="isValid('price')" 
+                            >
+                            *Price should be greater than 0
+                        </span>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                        <label class="form-label col-3">Stock</label>
+                        <div class="col-9">
+                            <input type="number" class="form-control" id="Stock" placeholder="stock" 
+                                name="stock" 
+                                formControlName="stock"
+                                
+                            >
+                            
+                            <span class="form-text text-danger" *ngIf="isValid('stock')" 
+                            >
+                            *Stock should be greater than 0
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{myForm.valid}}</pre>
+
+        <span>value</span>
+        <pre>{{myForm.value | json}}</pre>
+
+        <span>touched</span>
+        <pre>{{myForm.touched}}</pre>
+
+        <span>Price</span>
+        <pre>{{myForm.controls['price'].errors }}</pre>
+    </div>
+</div>

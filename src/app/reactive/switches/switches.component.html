@@ -1,0 +1,93 @@
+<h2>Template:Switches</h2>
+
+<hr>
+
+<form [formGroup]='myForm' (ngSubmit)="save()">
+    <div fxLayout="row mb-1" >
+            <label for="" class="col-3 col-form-label">Sex</label>
+            <div class="col-9">
+                <div class="form-check">
+                    <input 
+                        class="form-check-input" 
+                        type="radio" 
+                        value="M"
+                        formControlName='sex'
+                        id="flexRadioDefault1"
+                        >
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Masculine
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" 
+                        type="radio" 
+                        value="F"
+                        id="flexRadioDefault2"
+                        formControlName='sex'
+                        >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Femenine
+                    </label>
+                </div>
+            </div>
+    </div>
+    <div fxLayout="row mb-1" >
+        <label class="col-3 col-form-label">Sex</label>
+        <div class="col-9">
+            <div class="form-check form-switch">
+                <input class="form-check-input" 
+                    type="checkbox" 
+                    formControlName='notifications'
+                    role="switch" 
+                    id="flexSwitchCheckChecked"
+                    >
+                <label class="form-check-label" for="flexSwitchCheckChecked">Notifications</label>
+            </div>
+        </div>
+
+    </div>
+
+    <div fxLayout="row mb-1" >
+        <label class="col-3 col-form-label"></label>
+        <div class="col-9">
+                <div class="form-check">
+                    <input class="form-check-input" 
+                        type="checkbox" 
+                        formControlName='conditions'
+                        value="" 
+                        id="flexCheckDefault"
+                        >
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Accept terms and conditions
+                    </label>
+                </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <button class="btn btn-primary" type="submit"
+                
+            >
+                Save
+            </button>
+        </div>
+    </div>
+
+
+</form>
+
+<h5>Valor forms</h5>
+<pre>{{myForm.value|json }}</pre>
+
+<h5>Person</h5>
+<pre>{{person|json }}</pre>
+
+<h5>Valid</h5>
+<pre>{{myForm.valid}}</pre>
+
+<!-- <h5>Terms</h5>
+<pre>{{myForm.controls['terms']?.errors | json}}</pre> -->
+
+<h5>Condiciones</h5>
+<pre></pre>

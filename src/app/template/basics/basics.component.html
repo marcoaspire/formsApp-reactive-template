@@ -1,0 +1,62 @@
+<h3>Template: Basics</h3>
+
+<hr>
+<div class="row">
+    <div class="col">
+            <form (ngSubmit)= 'save()' #myForm="ngForm">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label col-3">Product</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" name="product" 
+                            placeholder="Product's name" ngModel required
+                            minlength="3" 
+                            [ngModel]="initForm.name"
+                        >
+                        <span class="form-text text-danger" 
+                            *ngIf="validateName()">
+                            *Type at least 3 characters
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label col-3">Price</label>
+                    <div class="col-9">
+                        <input type="number" class="form-control" id="price" placeholder="Price" name="price" ngModel required>
+                        <span class="form-text text-danger" 
+                            *ngIf="validatePrice()">
+                            *Price should be greater than 0
+                        </span>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label col-3">Stock</label>
+                        <div class="col-9">
+                            <input type="number" class="form-control" id="Stock" placeholder="stock" 
+                                name="stock" ngModel customMin [min]=0 required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+            </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{myForm.valid}}</pre>
+
+        <span>value</span>
+        <pre>{{myForm.value | json}}</pre>
+
+        <span>touched</span>
+        <pre>{{myForm.touched}}</pre>
+
+        <span>Pristine</span>
+        <pre>{{myForm.pristine }}</pre>
+
+        <span>CustomDirective</span>
+        <pre>{{myForm.controls['stocks']?.errors | json }}</pre>
+
+    </div>
+</div>

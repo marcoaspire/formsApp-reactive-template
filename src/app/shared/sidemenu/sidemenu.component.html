@@ -13,11 +13,22 @@
 
 <h2>Reactive</h2>
 <ul class="list-group mt-4">
-        <li *ngFor="let item of reactiveMenu"
-            class="list-group-item" 
-            [routerLink]="item.path"
-            routerLinkActive="active"
-        >
-            {{item.text}}
-        </li>
-    </ul>
+    <li *ngFor="let item of reactiveMenu"
+        class="list-group-item" 
+        [routerLink]="item.path"
+        routerLinkActive="active"
+    >
+        {{item.text}}
+    </li>
+</ul>
+
+<h2 class="pt-3">Validations</h2>
+<ul class="list-group mt-4">
+    <li *ngFor="let item of authMenu"
+        class="list-group-item" 
+        [routerLink]="item.path"
+        routerLinkActive="active"
+    >
+        {{item.text}}
+    </li>
+</ul>

@@ -30,7 +30,7 @@ export class BasicsComponent implements OnInit {
   }
 
   validatePrice():boolean{
-    return this.myForm?.form.controls['price']?.touched && this.myForm?.form.controls['price']?.value  <= 0;
+    return this.myForm?.form.controls['price']?.touched && this.myForm?.form.controls['price']?.value  <= 0
   }
   
 

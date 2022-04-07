@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SwitchesComponent implements OnInit {
   
-
+  //A Nested Form Group is a group of input elements that you need to validate together.
   myForm:FormGroup = this.fb.group({
     sex: ['M',Validators.required],
     notifications:[true,Validators.required],
